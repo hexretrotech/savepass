@@ -7,6 +7,7 @@
 package savepass;
 import savepassWindow.*;
 import java.io.*;
+import savepass.List;
 /**
  *
  * @author valera
@@ -18,13 +19,11 @@ public class SavePass {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {   
-        FileReader fw = new FileReader("./file2.spf");
-        BufferedReader br = new BufferedReader(fw);
-        
+  
         testFrame test = new testFrame();
         test.setVisible(true);
-        test.jTextPane1.setText(br.readLine());
 
+        List clist = new List();
     }
     
 }
