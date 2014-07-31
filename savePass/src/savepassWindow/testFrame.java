@@ -5,13 +5,19 @@
  */
 
 package savepassWindow;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author valera
  */
 public class testFrame extends javax.swing.JFrame {
-    ArrayList<String> list = new ArrayList<String>();
     /**
      * Creates new form testFrame
      */
@@ -70,10 +76,17 @@ public class testFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String s[] = jTextPane1.getText().split("\\r?\\n");
-    ArrayList<String>arrList = new ArrayList<>(Arrays.asList(s)) ;
-    System.out.println(arrList);
-        System.out.println(list.get(1));   // TODO add your handling code here:
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter("./file2.spf");
+            String s = jTextPane1.getText();
+            System.out.println(s);
+            char[] c = new char[s.length()];
+            s.getChars(0, s.length(), c, 0);
+            fw.write(c);
+            fw.close();
+        } catch (FileNotFoundException ex) {} catch (IOException ex) {} 
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -114,6 +127,6 @@ public class testFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    public javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
