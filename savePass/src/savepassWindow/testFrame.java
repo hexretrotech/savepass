@@ -76,17 +76,7 @@ public class testFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        FileWriter fw = null;
-        try {
-            fw = new FileWriter("./file2.spf");
-            String s = jTextPane1.getText();
-            System.out.println(s);
-            char[] c = new char[s.length()];
-            s.getChars(0, s.length(), c, 0);
-            fw.write(c);
-            fw.close();
-        } catch (FileNotFoundException ex) {} catch (IOException ex) {} 
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
